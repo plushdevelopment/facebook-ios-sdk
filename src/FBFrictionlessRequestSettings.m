@@ -22,8 +22,8 @@
 //
 @interface FBFrictionlessRequestSettings ()
 
-@property (readwrite) NSArray *     allowedRecipients;
-@property (readwrite) FBRequest*    activeRequest;
+@property (readwrite, strong) NSArray *     allowedRecipients;
+@property (readwrite, strong) FBRequest*    activeRequest;
 
 @end
 
