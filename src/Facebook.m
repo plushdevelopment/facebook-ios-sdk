@@ -45,7 +45,7 @@ static void *finishedContext = @"finishedContext";
 @interface Facebook ()
 
 // private properties
-@property(nonatomic) NSArray* permissions;
+@property(weak, weak, nonatomic) NSArray* permissions;
 @property(nonatomic, copy) NSString* appId;
 
 @end

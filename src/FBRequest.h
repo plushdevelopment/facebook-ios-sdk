@@ -34,11 +34,11 @@ typedef NSUInteger FBRequestState;
     id<FBRequestDelegate> __unsafe_unretained _delegate;
     NSString*             _url;
     NSString*             _httpMethod;
-    NSMutableDictionary*  _params;
+    NSMutableDictionary*  __weak _params;
     NSURLConnection*      _connection;
     NSMutableData*        _responseText;
     FBRequestState        _state;
-    NSError*              _error;
+    NSError*              __weak _error;
     BOOL                  _sessionDidExpire;
 }
 
@@ -61,7 +61,7 @@ typedef NSUInteger FBRequestState;
  * These values in the dictionary will be converted to strings using the
  * standard Objective-C object-to-string conversion facilities.
  */
-@property(nonatomic) NSMutableDictionary* params;
+@property(weak, nonatomic) NSMutableDictionary* params;
 @property(nonatomic) NSURLConnection*  connection;
 @property(nonatomic) NSMutableData* responseText;
 @property(nonatomic,readonly) FBRequestState state;
@@ -70,7 +70,7 @@ typedef NSUInteger FBRequestState;
 /**
  * Error returned by the server in case of request's failure (or nil otherwise).
  */
-@property(nonatomic) NSError* error;
+@property(weak, nonatomic) NSError* error;
 
 
 + (NSString*)serializeURL:(NSString *)baseUrl

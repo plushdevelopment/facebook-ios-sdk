@@ -35,7 +35,7 @@
     FBDialog* _fbDialog;
     NSString* _appId;
     NSString* _urlSchemeSuffix;
-    NSArray* _permissions;
+    NSArray* __weak _permissions;
     BOOL _isExtendingAccessToken;
     FBRequest *_requestExtendingAccessToken;
     NSDate* _lastAccessTokenUpdate;
